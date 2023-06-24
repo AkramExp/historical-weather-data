@@ -38,8 +38,8 @@ Run Image
 ```
 ## Screenshots
 
-![Screenshot1](https://github.com/AkramExp/historical-weather-data/blob/main/screenshots/Screenshot1.png)
+![Screenshot1](https://github.com/AkramExp/historical-weather-data/blob/main/screenshots/ss1.png)
 
-![Screenshot2](https://github.com/AkramExp/historical-weather-data/blob/main/screenshots/Screenshot2.png)
+![Screenshot2](https://github.com/AkramExp/historical-weather-data/blob/main/screenshots/ss2.png)
 
-![Screenshot3](https://github.com/AkramExp/historical-weather-data/blob/main/screenshots/Screenshot3.png)
+![Screenshot3](https://github.com/AkramExp/historical-weather-data/blob/main/screenshots/ss3.png)
