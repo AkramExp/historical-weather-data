@@ -3,7 +3,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-stations = pd.read_csv("data_small/stations.txt", skiprows=17)
+stations = pd.read_csv("data/stations.txt", skiprows=17)
 
 
 @app.route("/")
@@ -13,7 +13,7 @@ def home():
 
 @app.route("/api/v1/<station>/<date>")
 def one_data(station, date):
-    filename = "data_small/TG_STAID" + str(station).zfill(6) + ".txt"
+    filename = "data/TG_STAID" + str(station).zfill(6) + ".txt"
     df = pd.read_csv(filename, skiprows=20, parse_dates=["    DATE"])
     df = df.loc[df['    DATE'] == date]
     df['   TG'] = df['   TG'] / 10
@@ -22,7 +22,7 @@ def one_data(station, date):
 
 @app.route("/api/v1/<station>")
 def one_station(station):
-    filename = "data_small/TG_STAID" + str(station).zfill(6) + ".txt"
+    filename = "data/TG_STAID" + str(station).zfill(6) + ".txt"
     df = pd.read_csv(filename, skiprows=20, parse_dates=["    DATE"])
     df['   TG'] = df['   TG'] / 10
     return render_template("page2.html", data=df.to_html(), station=station)
@@ -30,7 +30,7 @@ def one_station(station):
 
 @app.route("/api/v1/<station>/yearly/<year>")
 def one_year(station, year):
-    filename = "data_small/TG_STAID" + str(station).zfill(6) + ".txt"
+    filename = "data/TG_STAID" + str(station).zfill(6) + ".txt"
     df = pd.read_csv(filename, skiprows=20)
     df["    DATE"] = df["    DATE"].astype(str)
     df = df[df["    DATE"].str.startswith(str(year))]
